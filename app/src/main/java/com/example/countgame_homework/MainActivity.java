@@ -23,12 +23,15 @@ public class MainActivity extends AppCompatActivity {
         int b = 100;
         final int random_number = a + (int) (Math.random() * b );
 
+
         Button answer = findViewById(R.id.answer_Button);
         answer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (seekBar.getProgress() == random_number) {
+                if (seekBar.getProgress() - random_number > 10) {
                     WinOrLose.setText("Угадал");
+                } else  if (random_number - seekBar.getProgress() > 30) {
+                    WinOrLose.setText("Почти угадал");
                 } else {
                     WinOrLose.setText("Не угадал");
                 }
