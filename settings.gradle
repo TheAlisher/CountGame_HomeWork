@@ -1,0 +1,2 @@
+rootProject.name='CountGame_HomeWork'
+include ':app'
